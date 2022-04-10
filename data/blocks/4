@@ -1,0 +1,8 @@
+blockChain
+test
+50
+
+~~~END DATA~~~
+!nonce: 11 :nonce!
+!hash: 0c7542a2ce36dd1df039943c70590ba8202f4af8ae78ca5bb380851f72a31299 :hash!
+!prevHash: 07fae31e78a0481ed9e629739eb145fc1f65d5dbc83922d4235da3b6adee9751 :prevHash!

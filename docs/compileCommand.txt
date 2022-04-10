@@ -1,0 +1,1 @@
+g++ -pie -o cryptoCurrency.exe -Werror bin\main.cpp bin\block.cpp bin\blockChain.cpp bin\transaction.cpp bin\user.cpp bin\sha256.cpp
