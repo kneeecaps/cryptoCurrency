@@ -1,3 +1,0 @@
-B:/Coding/c++/cryptoCurrency/build/CMakeFiles/cryptoCurrency.dir
-B:/Coding/c++/cryptoCurrency/build/CMakeFiles/edit_cache.dir
-B:/Coding/c++/cryptoCurrency/build/CMakeFiles/rebuild_cache.dir
