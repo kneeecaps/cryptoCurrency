@@ -72,85 +72,85 @@ CMakeFiles/cryptoCurrency.dir/src/block.cpp.obj: CMakeFiles/cryptoCurrency.dir/f
 CMakeFiles/cryptoCurrency.dir/src/block.cpp.obj: ../src/block.cpp
 CMakeFiles/cryptoCurrency.dir/src/block.cpp.obj: CMakeFiles/cryptoCurrency.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=B:\Coding\c++\cryptoCurrency\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/cryptoCurrency.dir/src/block.cpp.obj"
-	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cryptoCurrency.dir/src/block.cpp.obj -MF CMakeFiles\cryptoCurrency.dir\src\block.cpp.obj.d -o CMakeFiles\cryptoCurrency.dir\src\block.cpp.obj -c B:\Coding\c++\cryptoCurrency\src\block.cpp
+	D:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cryptoCurrency.dir/src/block.cpp.obj -MF CMakeFiles\cryptoCurrency.dir\src\block.cpp.obj.d -o CMakeFiles\cryptoCurrency.dir\src\block.cpp.obj -c B:\Coding\c++\cryptoCurrency\src\block.cpp
 
 CMakeFiles/cryptoCurrency.dir/src/block.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cryptoCurrency.dir/src/block.cpp.i"
-	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E B:\Coding\c++\cryptoCurrency\src\block.cpp > CMakeFiles\cryptoCurrency.dir\src\block.cpp.i
+	D:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E B:\Coding\c++\cryptoCurrency\src\block.cpp > CMakeFiles\cryptoCurrency.dir\src\block.cpp.i
 
 CMakeFiles/cryptoCurrency.dir/src/block.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cryptoCurrency.dir/src/block.cpp.s"
-	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S B:\Coding\c++\cryptoCurrency\src\block.cpp -o CMakeFiles\cryptoCurrency.dir\src\block.cpp.s
+	D:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S B:\Coding\c++\cryptoCurrency\src\block.cpp -o CMakeFiles\cryptoCurrency.dir\src\block.cpp.s
 
 CMakeFiles/cryptoCurrency.dir/src/blockChain.cpp.obj: CMakeFiles/cryptoCurrency.dir/flags.make
 CMakeFiles/cryptoCurrency.dir/src/blockChain.cpp.obj: ../src/blockChain.cpp
 CMakeFiles/cryptoCurrency.dir/src/blockChain.cpp.obj: CMakeFiles/cryptoCurrency.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=B:\Coding\c++\cryptoCurrency\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/cryptoCurrency.dir/src/blockChain.cpp.obj"
-	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cryptoCurrency.dir/src/blockChain.cpp.obj -MF CMakeFiles\cryptoCurrency.dir\src\blockChain.cpp.obj.d -o CMakeFiles\cryptoCurrency.dir\src\blockChain.cpp.obj -c B:\Coding\c++\cryptoCurrency\src\blockChain.cpp
+	D:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cryptoCurrency.dir/src/blockChain.cpp.obj -MF CMakeFiles\cryptoCurrency.dir\src\blockChain.cpp.obj.d -o CMakeFiles\cryptoCurrency.dir\src\blockChain.cpp.obj -c B:\Coding\c++\cryptoCurrency\src\blockChain.cpp
 
 CMakeFiles/cryptoCurrency.dir/src/blockChain.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cryptoCurrency.dir/src/blockChain.cpp.i"
-	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E B:\Coding\c++\cryptoCurrency\src\blockChain.cpp > CMakeFiles\cryptoCurrency.dir\src\blockChain.cpp.i
+	D:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E B:\Coding\c++\cryptoCurrency\src\blockChain.cpp > CMakeFiles\cryptoCurrency.dir\src\blockChain.cpp.i
 
 CMakeFiles/cryptoCurrency.dir/src/blockChain.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cryptoCurrency.dir/src/blockChain.cpp.s"
-	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S B:\Coding\c++\cryptoCurrency\src\blockChain.cpp -o CMakeFiles\cryptoCurrency.dir\src\blockChain.cpp.s
+	D:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S B:\Coding\c++\cryptoCurrency\src\blockChain.cpp -o CMakeFiles\cryptoCurrency.dir\src\blockChain.cpp.s
 
 CMakeFiles/cryptoCurrency.dir/src/main.cpp.obj: CMakeFiles/cryptoCurrency.dir/flags.make
 CMakeFiles/cryptoCurrency.dir/src/main.cpp.obj: ../src/main.cpp
 CMakeFiles/cryptoCurrency.dir/src/main.cpp.obj: CMakeFiles/cryptoCurrency.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=B:\Coding\c++\cryptoCurrency\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/cryptoCurrency.dir/src/main.cpp.obj"
-	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cryptoCurrency.dir/src/main.cpp.obj -MF CMakeFiles\cryptoCurrency.dir\src\main.cpp.obj.d -o CMakeFiles\cryptoCurrency.dir\src\main.cpp.obj -c B:\Coding\c++\cryptoCurrency\src\main.cpp
+	D:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cryptoCurrency.dir/src/main.cpp.obj -MF CMakeFiles\cryptoCurrency.dir\src\main.cpp.obj.d -o CMakeFiles\cryptoCurrency.dir\src\main.cpp.obj -c B:\Coding\c++\cryptoCurrency\src\main.cpp
 
 CMakeFiles/cryptoCurrency.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cryptoCurrency.dir/src/main.cpp.i"
-	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E B:\Coding\c++\cryptoCurrency\src\main.cpp > CMakeFiles\cryptoCurrency.dir\src\main.cpp.i
+	D:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E B:\Coding\c++\cryptoCurrency\src\main.cpp > CMakeFiles\cryptoCurrency.dir\src\main.cpp.i
 
 CMakeFiles/cryptoCurrency.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cryptoCurrency.dir/src/main.cpp.s"
-	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S B:\Coding\c++\cryptoCurrency\src\main.cpp -o CMakeFiles\cryptoCurrency.dir\src\main.cpp.s
+	D:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S B:\Coding\c++\cryptoCurrency\src\main.cpp -o CMakeFiles\cryptoCurrency.dir\src\main.cpp.s
 
 CMakeFiles/cryptoCurrency.dir/src/sha256.cpp.obj: CMakeFiles/cryptoCurrency.dir/flags.make
 CMakeFiles/cryptoCurrency.dir/src/sha256.cpp.obj: ../src/sha256.cpp
 CMakeFiles/cryptoCurrency.dir/src/sha256.cpp.obj: CMakeFiles/cryptoCurrency.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=B:\Coding\c++\cryptoCurrency\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/cryptoCurrency.dir/src/sha256.cpp.obj"
-	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cryptoCurrency.dir/src/sha256.cpp.obj -MF CMakeFiles\cryptoCurrency.dir\src\sha256.cpp.obj.d -o CMakeFiles\cryptoCurrency.dir\src\sha256.cpp.obj -c B:\Coding\c++\cryptoCurrency\src\sha256.cpp
+	D:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cryptoCurrency.dir/src/sha256.cpp.obj -MF CMakeFiles\cryptoCurrency.dir\src\sha256.cpp.obj.d -o CMakeFiles\cryptoCurrency.dir\src\sha256.cpp.obj -c B:\Coding\c++\cryptoCurrency\src\sha256.cpp
 
 CMakeFiles/cryptoCurrency.dir/src/sha256.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cryptoCurrency.dir/src/sha256.cpp.i"
-	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E B:\Coding\c++\cryptoCurrency\src\sha256.cpp > CMakeFiles\cryptoCurrency.dir\src\sha256.cpp.i
+	D:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E B:\Coding\c++\cryptoCurrency\src\sha256.cpp > CMakeFiles\cryptoCurrency.dir\src\sha256.cpp.i
 
 CMakeFiles/cryptoCurrency.dir/src/sha256.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cryptoCurrency.dir/src/sha256.cpp.s"
-	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S B:\Coding\c++\cryptoCurrency\src\sha256.cpp -o CMakeFiles\cryptoCurrency.dir\src\sha256.cpp.s
+	D:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S B:\Coding\c++\cryptoCurrency\src\sha256.cpp -o CMakeFiles\cryptoCurrency.dir\src\sha256.cpp.s
 
 CMakeFiles/cryptoCurrency.dir/src/transaction.cpp.obj: CMakeFiles/cryptoCurrency.dir/flags.make
 CMakeFiles/cryptoCurrency.dir/src/transaction.cpp.obj: ../src/transaction.cpp
 CMakeFiles/cryptoCurrency.dir/src/transaction.cpp.obj: CMakeFiles/cryptoCurrency.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=B:\Coding\c++\cryptoCurrency\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/cryptoCurrency.dir/src/transaction.cpp.obj"
-	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cryptoCurrency.dir/src/transaction.cpp.obj -MF CMakeFiles\cryptoCurrency.dir\src\transaction.cpp.obj.d -o CMakeFiles\cryptoCurrency.dir\src\transaction.cpp.obj -c B:\Coding\c++\cryptoCurrency\src\transaction.cpp
+	D:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cryptoCurrency.dir/src/transaction.cpp.obj -MF CMakeFiles\cryptoCurrency.dir\src\transaction.cpp.obj.d -o CMakeFiles\cryptoCurrency.dir\src\transaction.cpp.obj -c B:\Coding\c++\cryptoCurrency\src\transaction.cpp
 
 CMakeFiles/cryptoCurrency.dir/src/transaction.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cryptoCurrency.dir/src/transaction.cpp.i"
-	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E B:\Coding\c++\cryptoCurrency\src\transaction.cpp > CMakeFiles\cryptoCurrency.dir\src\transaction.cpp.i
+	D:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E B:\Coding\c++\cryptoCurrency\src\transaction.cpp > CMakeFiles\cryptoCurrency.dir\src\transaction.cpp.i
 
 CMakeFiles/cryptoCurrency.dir/src/transaction.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cryptoCurrency.dir/src/transaction.cpp.s"
-	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S B:\Coding\c++\cryptoCurrency\src\transaction.cpp -o CMakeFiles\cryptoCurrency.dir\src\transaction.cpp.s
+	D:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S B:\Coding\c++\cryptoCurrency\src\transaction.cpp -o CMakeFiles\cryptoCurrency.dir\src\transaction.cpp.s
 
 CMakeFiles/cryptoCurrency.dir/src/user.cpp.obj: CMakeFiles/cryptoCurrency.dir/flags.make
 CMakeFiles/cryptoCurrency.dir/src/user.cpp.obj: ../src/user.cpp
 CMakeFiles/cryptoCurrency.dir/src/user.cpp.obj: CMakeFiles/cryptoCurrency.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=B:\Coding\c++\cryptoCurrency\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/cryptoCurrency.dir/src/user.cpp.obj"
-	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cryptoCurrency.dir/src/user.cpp.obj -MF CMakeFiles\cryptoCurrency.dir\src\user.cpp.obj.d -o CMakeFiles\cryptoCurrency.dir\src\user.cpp.obj -c B:\Coding\c++\cryptoCurrency\src\user.cpp
+	D:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cryptoCurrency.dir/src/user.cpp.obj -MF CMakeFiles\cryptoCurrency.dir\src\user.cpp.obj.d -o CMakeFiles\cryptoCurrency.dir\src\user.cpp.obj -c B:\Coding\c++\cryptoCurrency\src\user.cpp
 
 CMakeFiles/cryptoCurrency.dir/src/user.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cryptoCurrency.dir/src/user.cpp.i"
-	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E B:\Coding\c++\cryptoCurrency\src\user.cpp > CMakeFiles\cryptoCurrency.dir\src\user.cpp.i
+	D:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E B:\Coding\c++\cryptoCurrency\src\user.cpp > CMakeFiles\cryptoCurrency.dir\src\user.cpp.i
 
 CMakeFiles/cryptoCurrency.dir/src/user.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cryptoCurrency.dir/src/user.cpp.s"
-	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S B:\Coding\c++\cryptoCurrency\src\user.cpp -o CMakeFiles\cryptoCurrency.dir\src\user.cpp.s
+	D:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S B:\Coding\c++\cryptoCurrency\src\user.cpp -o CMakeFiles\cryptoCurrency.dir\src\user.cpp.s
 
 # Object files for target cryptoCurrency
 cryptoCurrency_OBJECTS = \

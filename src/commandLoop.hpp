@@ -1,43 +1,47 @@
 #include "mineCommand.hpp"
 #include "transactionCommand.hpp"
+#include "login.hpp"
+#include "user.hpp"
 
-void commandLoop(blockChain& bChain)
+void commandLoop(blockChain& bChain) //commandLoop function, imported into main. Takes reference to blockchain as argument so it can be modified
 {
-  while(true)
+  user currentUser = login(); //function to get user credentials and log the user into their account
+  while(true) //this is here to keep looping through taking user input until the program is told to stop
   {
-    std::string command;
+    std::string command; //defines a variable where what the user types will be stored
 
-    std::cout << "Command: ";
-    getline(std::cin, command);
+    std::cin.sync(); //idk why though this seems to fix the below lines taking weird input
+    std::cout << "Command: "; //prompts user for the command
+    getline(std::cin, command); //puts whatever the user typed into the variable defined before
 
-    if(command == "transaction")
+    if(command == "transaction") //if the user typed transaction
     {
-      transactionCommand(currentUser);
+      transactionCommand(currentUser); //run the function for making a transaction
     }
-    else if(command == "mine")
+    else if(command == "mine") //if the user typed mine
     {
-      mineCommand(bChain);
+      mineCommand(bChain, currentUser); //run the function for mining a block
     }
-    else if(command == "userInfo")
+    else if(command == "userInfo") //if the user typed userInfo
     {
-      std::cout << "Username: " << currentUser.username << "\n";
+      std::cout << "Username: " << currentUser.username << "\n"; //return stored information about the currently signed in user
       std::cout << "Password hash: " << currentUser.password << "\n";
       std::cout << "Balance: " << currentUser.balance << "\n";
     }
-    else if(command == "exit")
+    else if(command == "exit") //if the user typed exit
     {
-      break;
+      break; //exit the loop, causing the program to end after saving blockChain
     }
-    else if(command == "switchUser")
+    else if(command == "switchUser") //if the user typed switchUser
     {
-      login();
+      currentUser = login(); //runs login function again, to change stored user data
     }
-    else if(command == "blockChain")
-    {
-      std::vector<block> blocks = bChain.getVChain();
-      for(block& block : blocks)
+    else if(command == "blockChain") //if the user typed blockChain
+    { //this command shows all the stored information about the blockChain
+      std::vector<block> blocks = bChain.getVChain(); //sets blocks to a vector of every block in the blockchain
+      for(block& block : blocks) //loops through every element in the blocks vector
       {
-      std::cout << "\n";
+      std::cout << "\n"; //cout information about the current block
       std::cout << "Block " << block.getIndex() << ":";
       std::cout << "\n";
       std::cout << "Nonce: " << block.getNonce();
@@ -50,9 +54,9 @@ void commandLoop(blockChain& bChain)
       std::cout << "\n";
       }
     }
-    else
+    else //if the user typed something weird
     {
-      std::cout << "\nThat is not a valid command.\n";
+      std::cout << "\nThat is not a valid command.\n"; //tell user whatever they typed is not a command
     }
   }
 }

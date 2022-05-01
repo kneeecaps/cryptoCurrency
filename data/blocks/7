@@ -1,8 +1,0 @@
-blockChain
-test2
-50
-
-~~~END DATA~~~
-!nonce: 18 :nonce!
-!hash: 014ed060f199e58cc2e9b8dcf4c5bc73a0005f5e9054e79738c9eea41409b4a3 :hash!
-!prevHash: 065e5b8b67075ea800e7589f8cfe14ecef30063c1d7e7b749ad02d4b912560c7 :prevHash!

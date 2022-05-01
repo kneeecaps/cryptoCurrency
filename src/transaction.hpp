@@ -1,18 +1,23 @@
+#ifndef TRANSACTION_HPP
+#define TRANSACTION_HPP
+
 #include <string>
 
 #include "user.hpp"
 
-class transaction
+class transaction //declare class for transactions
 {
 public:
-  std::string sender;
+  std::string sender; //declare variables for the sender, receiver and amount. This was also originally a struct which is why these are public without getters and setters
   std::string receiver;
   int amount;
 
-  transaction(std::string sender, std::string reciever, int amount);
+  transaction(std::string sender, std::string reciever, int amount); //constructor that takes the values and automatically assigns them
 
-  bool verifyTransaction(user& currentUser);
+  bool verifyTransaction(user& currentUser); //function to make sure the transaction is valid and no one is trying to cheat the system
 
-  void queueTransaction();
-  void makeTransaction();
+  void queueTransaction(user& senderUser); //function to add the transaction to the list that will be mined with the next block
+  void makeTransaction(user& currentUser); //function to finalise the transaction, this is used when the block is being mined
 };
+
+#endif
