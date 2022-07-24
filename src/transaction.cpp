@@ -14,7 +14,7 @@ transaction::transaction(std::string sender, std::string reciever, int amount) :
 
 bool transaction::verifyTransaction(user& currentUser) //function to make sure the transaction is valid
 {
-  std::ifstream receiverFileTest("data\\users\\" + receiver); //open the file for the account of the receiver
+  std::ifstream receiverFileTest("data/users/" + receiver); //open the file for the account of the receiver
   if(receiverFileTest.good()) //if the file is there, account exists
   {
     if(currentUser.balance > amount) //check if the current user can afford to make the transaction
@@ -56,14 +56,14 @@ void transaction::queueTransaction(user& senderUser) //function for the user tha
     std::string temp; //create tmp string
     std::string fileAttemptsStr = std::to_string(fileAttempts); //turn the fileAttempts int to a string
 
-    if(fs::exists("data\\transactions\\" + sha256(ss.str()) + fileAttemptsStr)) //if the file exists
+    if(fs::exists("data/transactions/" + sha256(ss.str()) + fileAttemptsStr)) //if the file exists
     {//the sha256 of the data + a number for attempts is a code for the file name. The number is just there so the same transaction (which will have the same sha)
       fileAttempts++; //can be made multiple times. If the file is there, we will increment the attempts then try again with a one higher number until it works
     }
     else //if the file has not been made
     {
       fileMade = true; //set fileMade to true to break out of the loop
-      transactionFileName = "data\\transactions\\" + sha256(ss.str()) + fileAttemptsStr; //set the file name to whatever worked when the loop was broken
+      transactionFileName = "data/transactions/" + sha256(ss.str()) + fileAttemptsStr; //set the file name to whatever worked when the loop was broken
     }
   }
 
@@ -73,16 +73,18 @@ void transaction::queueTransaction(user& senderUser) //function for the user tha
 }
 void transaction::makeTransaction(user& currentUser) //function to making the transactions, used when mining blocks
 {
+  std::cout << "idk";
   user receiverUser; //create a user for whoever is going to be receiving the money
 
   std::string rUsername; //define variables for the data of this user
   std::string rPassword;
   std::string rBal;
   int rBalance;
-
-  std::ifstream receiverReadFile("data\\users\\" + receiver); //open the user's file, we know it will work because this transaction will have already been verified
-
+  
+  std::ifstream receiverReadFile("data/users/" + receiver); //open the user's file, we know it will work because this transaction will have already been verified
+  
   std::cin.sync(); //this just makes the getline functions run a bit better and with less potential for bugs
+  std::cout << "idk";
   getline(receiverReadFile, rUsername); //read the data from the receiver's file
   getline(receiverReadFile, rPassword);
   getline(receiverReadFile, rBal);
