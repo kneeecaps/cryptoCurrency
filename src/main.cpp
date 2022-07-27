@@ -31,7 +31,7 @@ int main()
   else
   {
     std::cout << "Block Chain broken/changed\n"; //if chain is bad, tell user, wait for input then close program
-    system("pause");
+    system("read -n1 -r -p \"Press any key to continue...\"");
     return 0;
   }
 

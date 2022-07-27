@@ -9,10 +9,11 @@ namespace fs = std::filesystem;
 
 void mineCommand(blockChain& bChain, user& currentUser) //mineCommand function, imported into commandLoop. Takes reference to blockChain as argument so it can be modified
 {
+  std::cout << "idk";
   std::vector<transaction> blockData; //defines vector of transactions which will be the data in the block
   std::stringstream blockTransactions; //defines string stream which the data from the vector will be switched to
 
-  for (const auto& file : fs::directory_iterator("data\\transactions")) //loop through ever file in the transactions directory
+  for (const auto& file : fs::directory_iterator("data/transactions")) //loop through ever file in the transactions directory
   { //this directory has stored all transactions not yet added to the blockchain
     std::string sender; //declare variable for the username of whoever is sended cryptocurrency
     std::string receiver; //declare variable for the username of whoever is receiving it
@@ -21,7 +22,7 @@ void mineCommand(blockChain& bChain, user& currentUser) //mineCommand function, 
 
     std::string fileName = file.path().filename().string(); //declare a variable for the name of whatever file is currently selected by the loop
 
-    std::ifstream transactionFile("data\\transactions\\" + fileName); //open the file selected by the loop
+    std::ifstream transactionFile("data/transactions/" + fileName); //open the file selected by the loop
 
     std::cin.sync(); //this is just here because stackoverflow said it would fix cin taking weird input and it has worked so far
     getline(transactionFile, sender); //set the first line of the opened file to the sender variable
@@ -36,7 +37,7 @@ void mineCommand(blockChain& bChain, user& currentUser) //mineCommand function, 
 
     readyTransaction.makeTransaction(currentUser); //function to make the transaction, this adds the amount to the receivers account
 
-    int deleted = fs::remove("data\\transactions\\" + fileName); //delete the transaction file so the same transaction is not made multiple times
+    int deleted = fs::remove("data/transactions/" + fileName); //delete the transaction file so the same transaction is not made multiple times
     //an issue with the above line of code is that it may make the output a bit dodgy if multiple users are mining at the same time
     //at this point, the code does not support multiple users logged in at the same time without multiple instances of all the files, so it isn't too bad right now
 

@@ -7,17 +7,17 @@
 
 user login() //function to log in, it returns a logged in user
 {
-  int choice; //something to store whether the user wants to register or log in
+  std::string choice; //something to store whether the user wants to register or log in
   user currentUser; //a variable to store the user
 
   std::cout << "1: Register\n2: Login\nYour choice: "; //ask user if they want to log in or register
-  std::cin >> choice; //store their decision
+  std::getline(std::cin, choice); //store their decision
+  std::cin.sync(); //this is just here because there is sometimes weird inputs without it
 
-  if(choice == 1) //if the user wants to register
+  if(choice == "1") //if the user wants to register
   {
     std::string username, password, confirmPassword; //declare variables for their username, their password and to confirm the password
 
-    std::cin.sync(); //this is just here because there is sometimes weird inputs without it
     std::cout << "Select a username: "; //prompt user for their username
     getline(std::cin, username); //take their input
     std::cout << "Select a password: "; //prompt user for their password
@@ -33,7 +33,7 @@ user login() //function to log in, it returns a logged in user
       login(); //restart this function
     }
 
-    std::ofstream file("data\\users\\" + username); //create a file to store the user's details
+    std::ofstream file("data/users/" + username); //create a file to store the user's details
 
     file << username << "\n" << password << "\n" << "100"; //Write their username and hashed password as well as 100 free coins to the file
 
@@ -45,19 +45,18 @@ user login() //function to log in, it returns a logged in user
 
     std::cout << "\n\nUser created succesfully!\n\n"; //there is a bug where this line runs multiple times when the password was not right first try
   } //I have not fixed that bug yet though
-  else if(choice == 2) //if the user wants to log in
+  else if(choice == "2") //if the user wants to log in
   {
     std::string username, password, un, pw, bal; //declare variables for the user input and what is in the user's file
     int balance; //declare variable for the balance of the user
 
-    std::cin.sync(); //this is just here so the input is normal
     std::cout << "Enter username: "; //prompt user for their username
     getline(std::cin, username); //get user input
     std::cout << "Enter password: "; //prompt user for their password
     getline(std::cin, password); //get user input
     password = sha256(password); //immediately hash the user's password
 
-    std::ifstream userFile("data\\users\\" + username); //open the file for the user's username
+    std::ifstream userFile("data/users/" + username); //open the file for the user's username
     getline(userFile, un); //get the data from the file on a line by line basis
     getline(userFile, pw);
     getline(userFile, bal);

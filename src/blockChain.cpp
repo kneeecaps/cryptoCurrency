@@ -40,11 +40,11 @@ void blockChain::addBlock(block bNew, bool mine) //function for adding a new blo
 
 void blockChain::importBChain() //function to import the blockChain from the files it is stored in
 {
-  for(const auto& file : fs::directory_iterator("data\\blocks\\")) //loop through every file in the directory where the blockchain is stored
+  for(const auto& file : fs::directory_iterator("data/blocks/")) //loop through every file in the directory where the blockchain is stored
   { //the blocks in the chain are stored in individual files labelled by index, probably not very efficient but it works
     std::string fileName = file.path().filename().string(); //declare fileName variable and set it to the name of current file
 
-    std::ifstream blockFile("data\\blocks\\" + fileName); //open the current file
+    std::ifstream blockFile("data/blocks/" + fileName); //open the current file
     std::stringstream fileData; //declare a stringstream variable for the fileData
 
     char byte; //declare a variable for bytes
@@ -75,7 +75,7 @@ void blockChain::exportBChain() //function for saving the blockchain
 {
   for(block& block : _vChain) //loop through every block in the blockChain
   {
-    std::ofstream blockFile("data\\blocks\\" + std::to_string(block.getIndex())); //open the file for the block's index in write mode
+    std::ofstream blockFile("data/blocks/" + std::to_string(block.getIndex())); //open the file for the block's index in write mode
 
     blockFile << block.getData() << "~~~END DATA~~~\n"; //write all the block's data into the file with the tags importBChain will use later
     blockFile << "!nonce: " << block.getNonce() << " :nonce!\n";

@@ -3,6 +3,6 @@ test
 50
 
 ~~~END DATA~~~
-!nonce: 6 :nonce!
-!hash: 08471264caee4cb576fe18e4a96571305a049962585c7a3679011a1e94af067d :hash!
-!prevHash: 006dac8dcda94dd971b78ff94a7293a361b8cdd31e5a237746acb1f4a339697c :prevHash!
+!nonce: 27 :nonce!
+!hash: 0f33891c5b470fdbd42909514092af7c990f78f76f3a07f442f42434ee0507b2 :hash!
+!prevHash: 0b9da8093693562d66d8e08010813056e3a8d3980d98c996ac6ad1fceeb8f66b :prevHash!

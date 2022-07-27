@@ -1,5 +1,5 @@
 Genesis Block
 ~~~END DATA~~~
 !nonce: -1 :nonce!
-!hash:  :hash!
-!prevHash:  :prevHash!
+!hash: noHashLmao :hash!
+!prevHash: noHashLmao :prevHash!
