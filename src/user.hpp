@@ -1,6 +1,8 @@
 #ifndef USER_HPP
 #define USER_HPP
 
+#include "blockchain.hpp"
+
 class user //user class
 {
 public: //this class was originally a struct, just made it an object so I can have the update function
@@ -9,6 +11,7 @@ public: //this class was originally a struct, just made it an object so I can ha
   int balance;
 
   void update(); //and a function for updating the file
+  int findBalance(blockChain& bChain); //function for finding the balance of user
 };
 
 #endif
