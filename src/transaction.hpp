@@ -13,11 +13,11 @@ public:
   int amount;
 
   transaction(std::string sender, std::string reciever, int amount); //constructor that takes the values and automatically assigns them
+  transaction() {}; //empty constructor for when one isn't needed
 
   bool verifyTransaction(user& currentUser); //function to make sure the transaction is valid and no one is trying to cheat the system
 
   void queueTransaction(user& senderUser); //function to add the transaction to the list that will be mined with the next block
-  void makeTransaction(user& currentUser); //function to finalise the transaction, this is used when the block is being mined
 };
 
 #endif

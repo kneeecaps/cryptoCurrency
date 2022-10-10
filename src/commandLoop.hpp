@@ -5,7 +5,7 @@
 
 void commandLoop(blockChain& bChain) //commandLoop function, imported into main. Takes reference to blockchain as argument so it can be modified
 {
-  user currentUser = login(); //function to get user credentials and log the user into their account
+  user currentUser = login(bChain); //function to get user credentials and log the user into their account
   while(true) //this is here to keep looping through taking user input until the program is told to stop
   {
     std::string command; //defines a variable where what the user types will be stored
@@ -34,7 +34,7 @@ void commandLoop(blockChain& bChain) //commandLoop function, imported into main.
     }
     else if(command == "switchUser") //if the user typed switchUser
     {
-      currentUser = login(); //runs login function again, to change stored user data
+      currentUser = login(bChain); //runs login function again, to change stored user data
     }
     else if(command == "blockChain") //if the user typed blockChain
     { //this command shows all the stored information about the blockChain

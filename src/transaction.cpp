@@ -41,7 +41,6 @@ void transaction::queueTransaction(user& senderUser) //function for the user tha
   if(senderUser.username != "blockChain") //if the username of the user is not blockchain
   { //the blockchain is a default account that is used to payout rewards for miners, this is here so it does not run out of money
     senderUser.balance = senderUser.balance - amount; //decrease the balance of the user if they are not the blockchain
-    senderUser.update(); //call the update function for the user to save their new balance in their file
   }
 
   std::stringstream ss; //declare a stringstream
@@ -70,37 +69,4 @@ void transaction::queueTransaction(user& senderUser) //function for the user tha
   std::ofstream transactionFile(transactionFileName); //create a file by the filename that the above code said works
   transactionFile << sender << "\n" << receiver << "\n" << amount; //put the data into this file
   transactionFile.close(); //close the file, we are done with it.
-}
-void transaction::makeTransaction(user& currentUser) //function to making the transactions, used when mining blocks
-{
-  std::cout << "idk";
-  user receiverUser; //create a user for whoever is going to be receiving the money
-
-  std::string rUsername; //define variables for the data of this user
-  std::string rPassword;
-  std::string rBal;
-  int rBalance;
-  
-  std::ifstream receiverReadFile("data/users/" + receiver); //open the user's file, we know it will work because this transaction will have already been verified
-  
-  std::cin.sync(); //this just makes the getline functions run a bit better and with less potential for bugs
-  std::cout << "idk";
-  getline(receiverReadFile, rUsername); //read the data from the receiver's file
-  getline(receiverReadFile, rPassword);
-  getline(receiverReadFile, rBal);
-
-  rBalance = stoi(rBal); //turn the string version of the data to an integar
-
-  receiverReadFile.close(); //close the file, we don't need it anymore
-
-  receiverUser.username = rUsername; //set the receiver user's data to their username and password
-  receiverUser.password = rPassword;
-  receiverUser.balance = rBalance + amount; //their balance will equal their current balance + the transaction amount
-
-  receiverUser.update(); //save this new data to their file
-
-  if (receiverUser.username == currentUser.username) //if the receiver is the current logged in user
-  {
-    currentUser.balance = rBalance + amount; //update their balance in runtime as well as their file
-  }
 }
