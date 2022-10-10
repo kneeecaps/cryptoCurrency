@@ -1,5 +1,4 @@
 #include <fstream>
-#include <iostream> //only here for debug, remove later
 #include <vector>
 #include <algorithm>
 #include <sstream>
