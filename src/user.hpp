@@ -10,8 +10,7 @@ public: //this class was originally a struct, just made it an object so I can ha
   std::string password; //user class has variables for username, password and user balance
   int balance;
 
-  void update(); //and a function for updating the file
-  int findBalance(blockChain& bChain); //function for finding the balance of user
+  void findBalance(blockChain& bChain); //function for finding the balance of user
 };
 
 #endif

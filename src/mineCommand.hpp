@@ -35,8 +35,6 @@ void mineCommand(blockChain& bChain, user& currentUser) //mineCommand function, 
 
     transaction readyTransaction(sender, receiver, amount); //create transaction object, this takes sender, receiver and amount as arguments
 
-    readyTransaction.makeTransaction(currentUser); //function to make the transaction, this adds the amount to the receivers account
-
     int deleted = fs::remove("data/transactions/" + fileName); //delete the transaction file so the same transaction is not made multiple times
     //an issue with the above line of code is that it may make the output a bit dodgy if multiple users are mining at the same time
     //at this point, the code does not support multiple users logged in at the same time without multiple instances of all the files, so it isn't too bad right now
@@ -74,4 +72,5 @@ void mineCommand(blockChain& bChain, user& currentUser) //mineCommand function, 
   blockChain.balance = 50; //give them enough money to make the payout
   blockPayment.queueTransaction(blockChain); //queue the above transaction
   bChain.exportBChain(); //save the modified blockChain
+  currentUser.findBalance(bChain); //recalculate the balance of the currentUser
 }

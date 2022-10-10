@@ -41,11 +41,11 @@ user login(blockChain& bChain) //function to log in, it returns a logged in user
 
     currentUser.username = username; //add that information into the user object so the code can use it
     currentUser.password = password;
-    transaction blockPayment("blockChain", currentUser.username, 100); //create a transaction adding $100 to the new user as starting money
+    transaction startMoney("blockChain", currentUser.username, 100); //create a transaction adding $100 to the new user as starting money
     user blockChain; //create a user to make the payout
     blockChain.username = "blockChain"; //give them a name, this is just for the records
     blockChain.balance = 50; //give them enough money to make the payout
-    blockPayment.queueTransaction(blockChain); //queue the above transaction
+    startMoney.queueTransaction(blockChain); //queue the above transaction
 
     std::cout << "\n\nUser created succesfully!\n\n"; //there is a bug where this line runs multiple times when the password was not right first try
   } //I have not fixed that bug yet though
@@ -68,7 +68,7 @@ user login(blockChain& bChain) //function to log in, it returns a logged in user
     {
       currentUser.username = username; //put the data into the currentUser object
       currentUser.password = password;
-      currentUser.balance = currentUser.findBalance(bChain);
+      currentUser.findBalance(bChain);
 
       std::cout << "\n\nUser logged in succesfully!\n\n"; //tell user they logged in succesfully, there is also a bug here where this sometimes happens multiple times
     } //when the user got their password wrong

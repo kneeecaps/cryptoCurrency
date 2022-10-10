@@ -3,3 +3,6 @@ cryptoCurrency
 *.dll
 .vscode
 *.exe
+data/blocks
+!data/blocks/0
+
