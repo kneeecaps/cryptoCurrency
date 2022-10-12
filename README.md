@@ -1,9 +1,9 @@
 # cryptoCurrency
-Just a simple cryptocurrency I made based off of my blockChain project. I just made this because I was bored and someone said I couldn't.
+Just a simple cryptocurrency I made because I was bored and someone said it would be too hard to make. 
 
 The code has heaps of comments in it explaining how it works as well as some notes of what I could fix/improve.
 
-Since I see a lot of code on github that doesn't have compile instructions and I know a lot of people complain about not knowing how to compile it, I'll give a quick tutorial.
+Since I see a lot of code on github that doesn't have compile instructions and I know a lot of people complain about not knowing how to compile it, so I'll give a quick tutorial.
 
 So you are going to need cmake to compile it, if you don't have that just google an install link.
 Open a command line and create a build directory. It doesn't matter what you name it though naming it build is more conveniant (at least to me). 
