@@ -4,7 +4,7 @@
 #include <filesystem>
 #include <iostream> //just for debug, can remove later
 
-#include "blockChain.hpp"
+#include "blockChain.h"
 
 namespace fs = std::filesystem;
 

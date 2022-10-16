@@ -1,9 +1,9 @@
 #include <iostream>
 #include <string>
 
-#include "blockChain.hpp"
-#include "transaction.hpp"
-#include "commandLoop.hpp"
+#include "blockChain.h"
+#include "transaction.h"
+#include "commandLoop.h"
 
 //
 //Parts of this code are very poorly written

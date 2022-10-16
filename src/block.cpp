@@ -1,8 +1,8 @@
 #include <iostream>
 #include <sstream>
 
-#include "block.hpp"
-#include "sha256.hpp"
+#include "block.h"
+#include "sha256.h"
 
 block::block(int nIndexIn, const std::string &sDataIn) : _nIndex(nIndexIn), _sData(sDataIn) //constructor, set the index and data of the block to the arguments
 {

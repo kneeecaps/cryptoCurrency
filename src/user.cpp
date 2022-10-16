@@ -3,9 +3,9 @@
 #include <algorithm>
 #include <sstream>
 
-#include "user.hpp"
-#include "transaction.hpp"
-#include "block.hpp"
+#include "user.h"
+#include "transaction.h"
+#include "block.h"
 
 void user::findBalance(blockChain& bChain) //function to find the balance of user
 {

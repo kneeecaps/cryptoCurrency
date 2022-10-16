@@ -2,8 +2,8 @@
 #include <fstream>
 #include <string>
 
-#include "user.hpp"
-#include "sha256.hpp"
+#include "user.h"
+#include "sha256.h"
 
 user login(blockChain& bChain) //function to log in, it returns a logged in user
 {

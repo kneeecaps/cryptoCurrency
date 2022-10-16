@@ -1,9 +1,9 @@
-#ifndef BLOCKCHAIN_HPP
-#define BLOCKCHAIN_HPP
+#ifndef BLOCKCHAIN_h
+#define BLOCKCHAIN_h
 
 #include <vector>
 
-#include "block.hpp"
+#include "block.h"
 
 class blockChain //defining the blockchain class
 {

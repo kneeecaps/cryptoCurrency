@@ -1,7 +1,7 @@
-#ifndef USER_HPP
-#define USER_HPP
+#ifndef USER_h
+#define USER_h
 
-#include "blockChain.hpp"
+#include "blockChain.h"
 
 class user //user class
 {

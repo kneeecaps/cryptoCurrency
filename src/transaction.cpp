@@ -4,8 +4,8 @@
 #include <sstream>
 #include <filesystem>
 
-#include "transaction.hpp"
-#include "sha256.hpp"
+#include "transaction.h"
+#include "sha256.h"
 
 namespace fs = std::filesystem;
 

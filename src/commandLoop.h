@@ -1,7 +1,7 @@
-#include "mineCommand.hpp"
-#include "transactionCommand.hpp"
-#include "login.hpp"
-#include "user.hpp"
+#include "mineCommand.h"
+#include "transactionCommand.h"
+#include "login.h"
+#include "user.h"
 
 void commandLoop(blockChain& bChain) //commandLoop function, imported into main. Takes reference to blockchain as argument so it can be modified
 {

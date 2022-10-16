@@ -1,9 +1,9 @@
-#ifndef TRANSACTION_HPP
-#define TRANSACTION_HPP
+#ifndef TRANSACTION_h
+#define TRANSACTION_h
 
 #include <string>
 
-#include "user.hpp"
+#include "user.h"
 
 class transaction //declare class for transactions
 {
