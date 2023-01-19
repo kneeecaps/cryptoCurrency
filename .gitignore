@@ -1,8 +1,6 @@
 build
 cryptoCurrency
+*.exe
 *.dll
 .vscode
-*.exe
-data/blocks
-!data/blocks/0
 
