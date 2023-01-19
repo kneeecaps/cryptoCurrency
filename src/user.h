@@ -1,3 +1,6 @@
+#IFNDEF USER_H
+#DEFINE USER_H
+
 #include <string>
 
 class User
@@ -15,3 +18,5 @@ public:
     std::string getPasswdHash() {return _passwdHash;}
     int getBalance() {return _balance;}
 };
+
+#ENDIF
