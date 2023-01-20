@@ -1,5 +1,5 @@
-#IFNDEF USER_H
-#DEFINE USER_H
+#ifndef USER_H
+#define USER_H
 
 #include <string>
 
@@ -11,12 +11,11 @@ private:
     int _balance;
     void calculateBalance();
 public:
-    User(std::string username);
-    User(std::string username, std::string passwdHash);
+    User(std::string username, bool newUser);
 
     std::string getUsername() {return _username;}
     std::string getPasswdHash() {return _passwdHash;}
     int getBalance() {return _balance;}
 };
 
-#ENDIF
+#endif

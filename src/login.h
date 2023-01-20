@@ -10,7 +10,7 @@ void signUp()
     std::cin.ignore();
     std::getline(std::cin, username);
 
-    User currentUser = User(username);
+    User currentUser = User(username, true);
 }
 void signIn()
 {

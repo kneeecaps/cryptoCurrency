@@ -2,37 +2,36 @@
 
 #include "user.h"
 
-User::User(std::string username)
+User::User(std::string username, bool newUser)
 {
-    std::string passwd;
-    std::string cPasswd;
-
-    bool pwMatch = false;
-    while(!pwMatch)
+    if(newUser)
     {
-        std::cout << "Please enter a password: ";
-        std::cin.ignore();
-        std::getline(std::cin, passwd);
-        std::cout << "Please confirm your password: ";
-        std::cin.ignore();
-        std::getline(std::cin, cPasswd);
+        std::string passwd;
+        std::string cPasswd;
 
-        if(passwd == cPasswd)
+        bool pwMatch = false;
+        while(!pwMatch)
         {
-            pwMatch = true;
+            std::cout << "Please enter a password: ";
+            std::cin.ignore();
+            std::getline(std::cin, passwd);
+            std::cout << "Please confirm your password: ";
+            std::cin.ignore();
+            std::getline(std::cin, cPasswd);
+
+            if(passwd == cPasswd)
+            {
+                pwMatch = true;
+            }
+            else
+            {
+                std::cout << "\n\nPasswords did not match. Please try again.\n\n";
+            }
         }
-        else
-        {
-            std::cout << "\n\nPasswords did not match. Please try again.\n\n";
-        }
+        std::cout << "Password successfully set.\n";
+
+        //hash password and save it in file now.
     }
-    std::cout << "Password successfully set.\n";
-    
-    //hash password and save it in file now.
-}
-User::User(std::string username, std::string passwdHash)
-{
-
 }
 
 void User::calculateBalance()
