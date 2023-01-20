@@ -13,9 +13,12 @@ User::User(bool newUser)
     std::string cPasswdHash;
     std::string filePasswdHash;
     bool userCreated = false;
+    bool nextLoop = false;
 
     while(!userCreated)
     {
+        nextLoop = false;
+
         if(newUser)
         {
             bool newUsername = false;
@@ -23,6 +26,11 @@ User::User(bool newUser)
 
             while(!newUsername)
             {
+                if(nextLoop)
+                {
+                    newUsername = true;
+                    continue;
+                }
                 std::cout << "Please enter a username: ";
                 std::getline(std::cin, username);
 
@@ -30,16 +38,30 @@ User::User(bool newUser)
                 if(!userFile.good())
                 {
                     newUsername = true;
-                    _username = username;
                 }
                 else
                 {
-                    std::cout << "\n\nThis username is taken. Please try another one.\n\n";
+                    std::string choice;
+                    std::cout << "\n\nThat username is taken. Enter 1 to try logging in or 2 to try again.\n\n";
+                    std::cout << "Choice: ";
+                    std::getline(std::cin, choice);
+
+                    if(choice == "1")
+                    {
+                        newUser = false;
+                        nextLoop = true;
+                    }
                 }
             }
 
             while(!pwMatch)
             {
+                if(nextLoop)
+                {
+                    pwMatch = true;
+                    continue;
+                }
+
                 std::cout << "Please enter a password: ";
                 std::getline(std::cin, passwd);
                 std::cout << "Please confirm your password: ";
@@ -54,16 +76,28 @@ User::User(bool newUser)
                 }
                 else
                 {
-                    std::cout << "\n\nPasswords did not match. Please try again.\n\n";
+                    std::string choice;
+                    std::cout << "\n\nPasswords do not match. Enter 1 to try logging in or 2 to try again.\n";
+                    std::cout << "Choice: ";
+                    std::getline(std::cin, choice);
+
+                    if(choice == "1")
+                    {
+                        newUser = false;
+                        nextLoop = true;
+                    }
                 }
             }
-            std::cout << "\nUser account successfully created.\n";
+            if(!nextLoop)
+            {
+                std::cout << "\nUser account successfully created.\n";
 
-            std::ofstream userFile("data/users/" + _username);
-            userFile << passwdHash;
-            userFile.close();    
+                std::ofstream userFile("data/users/" + username);
+                userFile << passwdHash;
+                userFile.close();    
 
-            userCreated = true;   
+                userCreated = true;
+            }
         }
         else
         {
@@ -72,6 +106,12 @@ User::User(bool newUser)
 
             while(!goodUsername)
             {
+                if(nextLoop)
+                {
+                    goodUsername = true;
+                    continue;
+                }
+
                 std::cout << "Please enter your username: ";
                 std::getline(std::cin, username);
 
@@ -90,6 +130,7 @@ User::User(bool newUser)
                     if(choice == "1")
                     {
                         newUser = true;
+                        nextLoop = true;
                     }
                 }
                 userFile.close();
@@ -97,6 +138,12 @@ User::User(bool newUser)
 
             while(!rightPasswd)
             {
+                if(nextLoop)
+                {
+                    rightPasswd = true;
+                    continue;
+                }
+
                 std::cout << "Please enter your password: ";
                 std::getline(std::cin, passwd);
 
@@ -119,10 +166,14 @@ User::User(bool newUser)
                     if(choice == "1")
                     {
                         newUser = true;
+                        nextLoop = true;
                     }
                 }
             }
-            userCreated = true;
+            if(!nextLoop)
+            {
+                userCreated = true;
+            }
         }
     }
 
