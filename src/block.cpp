@@ -12,10 +12,11 @@ Block::Block(int index, int nonce, std::vector<Transaction>& data, std::string h
     _hash = hash;
     _prevHash = prevHash;
 }
-Block::Block(int index, std::vector<Transaction>& data, int& difficulty)
+Block::Block(int index, std::vector<Transaction>& data, std::string prevHash, int difficulty)
 {
     _index = index;
     _data = data;
+    _prevHash = prevHash;
 
     mineBlock(difficulty);
 }
@@ -41,7 +42,7 @@ void Block::mineBlock(int& difficulty)
     {
         nonce++;
         blockContent = std::stringstream();
-        blockContent << _index << "<" << blockData << ">" << nonce;
+        blockContent << _index << "<" << blockData << ">" << _prevHash << "/" << nonce;
 
         hash = sha256(blockContent.str());
         std::cout << hash << "\n";

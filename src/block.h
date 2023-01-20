@@ -15,7 +15,7 @@ private:
     std::string _prevHash;
 public:
     Block(int index, int nonce, std::vector<Transaction>& data, std::string hash, std::string prevHash);
-    Block(int index, std::vector<Transaction>& data, int& difficulty);
+    Block(int index, std::vector<Transaction>& data, std::string prevHash, int difficulty);
 
     int getIndex() {return _index;}
     int getNonce() {return _nonce;}
