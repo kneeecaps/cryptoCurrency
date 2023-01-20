@@ -11,7 +11,8 @@ private:
     int _balance;
     void _calculateBalance();
 public:
-    User(std::string username, bool newUser);
+    User(bool newUser);
+    User(){}
 
     std::string getUsername() {return _username;}
     std::string getPasswdHash() {return _passwdHash;}

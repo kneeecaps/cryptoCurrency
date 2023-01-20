@@ -4,6 +4,8 @@
 
 int main()
 {
-    login();
+    User currentUser = login();
+    std::cout << currentUser.getUsername() << "\n";
+    std::cout << currentUser.getPasswdHash() << "\n";
     return 1;
 }

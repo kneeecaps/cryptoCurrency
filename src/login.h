@@ -2,40 +2,28 @@
 
 #include "user.h"
 
-void signUp()
+User login()
 {
-    std::string username;
-
-    std::cout << "Please enter a username: ";
-    std::cin.ignore();
-    std::getline(std::cin, username);
-
-    User currentUser = User(username, true);
-}
-void signIn()
-{
-    std::cout << "signin";
-}
-
-void login()
-{
-    char choice;
+    std::string choice;
+    User currentUser;
 
     std::cout << "Would you like to sign up (1) or sign in (2)?: ";
-    std::cin >> choice;
+    std::getline(std::cin, choice);
     std::cout << "\n\n";
 
-    if(choice == '1')
+    if(choice == "1")
     {
-        signUp();
+        currentUser = User(true);
     }
-    else if(choice == '2')
+    else if(choice == "2")
     {
-        signIn();
+        currentUser = User(false);
     }
     else
     {
         std::cout << "That is not a valid choice, please enter a valid choice.\n\n";
         login();
     }
+
+    return currentUser;
 }
