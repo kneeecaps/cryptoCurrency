@@ -9,7 +9,7 @@ private:
     std::string _username;
     std::string _passwdHash;
     int _balance;
-    void calculateBalance();
+    void _calculateBalance();
 public:
     User(std::string username, bool newUser);
 

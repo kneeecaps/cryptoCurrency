@@ -34,7 +34,7 @@ User::User(std::string username, bool newUser)
     }
 }
 
-void User::calculateBalance()
+void User::_calculateBalance()
 {
 
 }
