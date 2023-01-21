@@ -1,9 +1,13 @@
+#include <iostream>
+#include <sstream>
+#include <fstream>
+
 #include "blockChain.h"
 
 BlockChain::BlockChain()
 {
-    std::vector<Transaction> data;
-    Block firstBlock = Block(0, 0, data, "noHash", "noHash");
+    std::vector<Transaction> tData;
+    Block firstBlock = Block(0, 0, tData, "noHash", "noHash");
     _blockChain.push_back(firstBlock);
     _importBlockChain();
 }
@@ -42,5 +46,29 @@ void BlockChain::_importBlockChain()
 }
 void BlockChain::_exportBlockChain()
 {
-    
+    for(Block block : _blockChain)
+    {
+        std::stringstream blockDataSS;
+
+        for(Transaction transaction : block.getData())
+        {
+            blockDataSS << transaction.getSender() << "," << transaction.getReceiver() << "," << transaction.getAmount() << ":";
+        }
+        std::string blockData = blockDataSS.str();
+        //std::cout << blockData;
+        if(!blockData.empty())
+        {
+            blockData.pop_back();
+        }
+
+        std::stringstream fileDataSS;
+        fileDataSS << block.getIndex() << "<" << blockData << ">" << block.getPrevHash() << "/" << block.getNonce();
+        std::string fileData = fileDataSS.str();
+        std::cout << fileData << "\n";
+
+        std::string filePath = "data/blockChain/" + std::to_string(block.getIndex());
+        std::ofstream blockFile(filePath);
+        blockFile << fileData;
+        blockFile.close();
+    }
 }

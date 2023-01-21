@@ -16,14 +16,21 @@ int main()
     tData.push_back(testTransaction2);
 
     std::vector<Transaction> tData2;
-    Transaction testTransaction3 = Transaction("Jeff", "Phil", 5);
+    Transaction testTransaction3 = Transaction("Jeff", "Phil", 20);
     tData2.push_back(testTransaction3);
-    Transaction testTransaction4 = Transaction("Phil", "Jeff", 10);
+    Transaction testTransaction4 = Transaction("Phil", "Jeff", 30);
     tData2.push_back(testTransaction4);
+
+    std::vector<Transaction> tData3;
+    Transaction testTransaction5 = Transaction("James", "Jim", 15);
+    tData3.push_back(testTransaction5);
+    Transaction testTransaction6 = Transaction("Jim", "James", 5);
+    tData3.push_back(testTransaction6);
 
 
     blockChain.addBlock(tData);
     blockChain.addBlock(tData2);
+    blockChain.addBlock(tData3);
 
     blockChain.showBChain();
 

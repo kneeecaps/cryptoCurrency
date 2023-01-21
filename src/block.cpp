@@ -20,21 +20,12 @@ Block::Block(int index, std::vector<Transaction>& data, std::string prevHash, in
     _data = data;
     _prevHash = prevHash;
 
-    std::stringstream blockDataSS;
-
-    for(Transaction transaction : _data)
-    {
-        blockDataSS << transaction.getSender() << "," << transaction.getReceiver() << "," << transaction.getAmount() << ":";
-    }
-    std::string blockData = blockDataSS.str();
-    blockData.pop_back();
-
-    unsigned int nThreads = std::thread::hardware_concurrency() / 2;
+    unsigned int nThreads = std::thread::hardware_concurrency() / 2; //this is divided by two so the program doesn't hog all the available threads
     std::vector<std::thread> threads;
 
     for(int i = 0; i <= nThreads; i++)
     {
-        std::thread miningThread(&Block::mineBlock, this, blockData, i, nThreads, difficulty);
+        std::thread miningThread(&Block::mineBlock, this, i, nThreads, difficulty);
         threads.push_back(std::move(miningThread));
     }
     for(int i = 0; i <= nThreads; i++)
@@ -42,7 +33,36 @@ Block::Block(int index, std::vector<Transaction>& data, std::string prevHash, in
         threads[i].join();
     }
 }
-void Block::mineBlock(std::string blockData, int startNonce, int increment, int difficulty)
+
+std::string Block::parseData(bool exportFormat)
+{
+    std::stringstream blockDataSS;
+    std::stringstream blockContentSS;
+
+    for(Transaction transaction : _data)
+    {
+        blockContentSS << transaction.getSender() << "," << transaction.getReceiver() << "," << transaction.getAmount() << ":";
+    }
+    std::string blockContent = blockContentSS.str();
+    if(!blockContent.empty())
+    {
+        blockContent.pop_back();
+    }
+
+    if(exportFormat)
+    {
+        return blockContent;
+    }
+    else
+    {
+        blockDataSS << _index << "<" << blockContent << ">" << _prevHash << "/" << _nonce;
+        std::string blockData = blockDataSS.str();
+
+        return blockData;
+    }
+}
+
+void Block::mineBlock(int startNonce, int increment, int difficulty)
 {
     std::stringstream blockContent;
     int nonce = startNonce;
@@ -59,7 +79,7 @@ void Block::mineBlock(std::string blockData, int startNonce, int increment, int 
         }
         nonce += increment;
         blockContent = std::stringstream();
-        blockContent << _index << "<" << blockData << ">" << _prevHash << "/" << nonce;
+        blockContent << _index << "<" << parseData(false) << ">" << _prevHash << "/" << nonce;
 
         hash = sha256(blockContent.str());
     }

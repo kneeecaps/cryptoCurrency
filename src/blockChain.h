@@ -1,6 +1,8 @@
 #ifndef BLOCKCHAIN_H
 #define BLOCKCHAIN_H
 
+#include <vector>
+
 #include "block.h"
 #include "transaction.h"
 
