@@ -23,6 +23,7 @@ void BlockChain::showBChain()
     for(Block block : _blockChain)
     {
         std::cout << "Index: " << block.getIndex() << "\n";
+        std::cout << "Nonce: " << block.getNonce() << "\n\n";
         std::cout << "Data: \n";
         for(Transaction transaction : block.getData())
         {
