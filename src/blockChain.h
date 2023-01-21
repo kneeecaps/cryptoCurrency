@@ -8,7 +8,7 @@ class BlockChain
 {
 private:
     std::vector<Block> _blockChain;
-    const int _difficulty = 3;
+    const int _difficulty = 5;
     void _importBlockChain();
     void _exportBlockChain();
 public:

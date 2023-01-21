@@ -13,6 +13,7 @@ private:
     std::vector<Transaction> _data;
     std::string _hash;
     std::string _prevHash;
+    bool _blockMined = false;
 public:
     Block(int index, int nonce, std::vector<Transaction>& data, std::string hash, std::string prevHash);
     Block(int index, std::vector<Transaction>& data, std::string prevHash, int difficulty);
@@ -23,7 +24,7 @@ public:
     std::string getHash() {return _hash;}
     std::string getPrevHash() {return _prevHash;}
 
-    void mineBlock(int& difficulty);
+    void mineBlock(std::string blockData, int startNonce, int increment, int difficulty);
 };
 
 #endif
