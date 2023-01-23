@@ -46,7 +46,7 @@ Block::Block(std::string parsedData)
     
     if(_index != 0)
     {
-        _hash = sha256(parseData(false));
+        _hash = sha256(parseData(true));
     }
     else
     {
@@ -90,7 +90,7 @@ std::string Block::parseData(bool exportFormat)
         blockContent.pop_back();
     }
 
-    if(exportFormat)
+    if(!exportFormat)
     {
         return blockContent;
     }
@@ -120,7 +120,7 @@ void Block::mineBlock(int startNonce, int increment, int difficulty)
         }
         nonce += increment;
         blockContent = std::stringstream();
-        blockContent << _index << "<" << parseData(true) << ">" << _prevHash << "/" << nonce;
+        blockContent << _index << "<" << parseData(false) << ">" << _prevHash << "/" << nonce;
 
         std::string blockContentStr = blockContent.str();
 

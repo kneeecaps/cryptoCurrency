@@ -61,7 +61,7 @@ void BlockChain::_exportBlockChain()
     {
         std::string filePath = "data/blockChain/" + std::to_string(block.getIndex());
         std::ofstream blockFile(filePath);
-        blockFile << block.parseData(false);
+        blockFile << block.parseData(true);
         blockFile.close();
     }
 }
