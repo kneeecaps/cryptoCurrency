@@ -15,7 +15,7 @@ private:
     std::string _prevHash;
     bool _blockMined = false;
 public:
-    Block(int index, int nonce, std::vector<Transaction>& data, std::string hash, std::string prevHash);
+    Block(std::string parsedData);
     Block(int index, std::vector<Transaction>& data, std::string prevHash, int difficulty);
 
     int getIndex() {return _index;}

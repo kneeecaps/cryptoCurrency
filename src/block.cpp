@@ -5,13 +5,55 @@
 #include "block.h"
 #include "sha256.h"
 
-Block::Block(int index, int nonce, std::vector<Transaction>& data, std::string hash, std::string prevHash)
+Block::Block(std::string parsedData)
 {
-    _index = index;
-    _nonce = nonce;
-    _data = data;
-    _hash = hash;
-    _prevHash = prevHash;
+    _index = stoi(parsedData.substr(0, parsedData.find("<") - 2));
+    _nonce = stoi(parsedData.substr(parsedData.find("/") + 1));
+
+    std::string dataSubstr = parsedData.substr(parsedData.find("<") + 1, parsedData.find(">") - (parsedData.find("<") + 1));
+    if(dataSubstr.length() > 0)
+    {
+        std::vector<std::string> transactionStrVec;
+        std::string transactionStr;
+        std::stringstream transactionSS(dataSubstr);
+
+        while(std::getline(transactionSS, transactionStr, ':'))
+        {
+            transactionStrVec.push_back(transactionStr);
+        }
+
+        for(std::string transactionStr : transactionStrVec)
+        {
+            std::vector<std::string> transactionValues;
+            std::string transactionValStr;
+            std::stringstream transactionValSS(transactionStr);
+
+            while(std::getline(transactionValSS, transactionValStr, ','))
+            {
+                transactionValues.push_back(transactionValStr);
+            }
+
+            std::string sender = transactionValues[0];
+            std::string receiver = transactionValues[1];
+            int amount = std::stoi(transactionValues[2]);
+
+            Transaction transaction = Transaction(sender, receiver, amount);
+            _data.push_back(transaction);
+        }
+        std::cout << sha256(parsedData) << "\n";
+    }
+
+    _prevHash = parsedData.substr(parsedData.find(">") + 1, parsedData.find("/") - (parsedData.find(">") + 1)); //need to find out why this isn't getting right value
+    
+    if(_index != 0)
+    {
+        _hash = sha256(parseData(false));
+    }
+    else
+    {
+        _hash = "noHash";
+    }
+
     _blockMined = true;
 }
 Block::Block(int index, std::vector<Transaction>& data, std::string prevHash, int difficulty)
@@ -79,9 +121,11 @@ void Block::mineBlock(int startNonce, int increment, int difficulty)
         }
         nonce += increment;
         blockContent = std::stringstream();
-        blockContent << _index << "<" << parseData(false) << ">" << _prevHash << "/" << nonce;
+        blockContent << _index << "<" << parseData(true) << ">" << _prevHash << "/" << nonce;
 
-        hash = sha256(blockContent.str());
+        std::string blockContentStr = blockContent.str();
+
+        hash = sha256(blockContentStr);
     }
     if(!_blockMined)
     {
