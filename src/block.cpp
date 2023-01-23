@@ -40,7 +40,6 @@ Block::Block(std::string parsedData)
             Transaction transaction = Transaction(sender, receiver, amount);
             _data.push_back(transaction);
         }
-        std::cout << sha256(parsedData) << "\n";
     }
 
     _prevHash = parsedData.substr(parsedData.find(">") + 1, parsedData.find("/") - (parsedData.find(">") + 1)); //need to find out why this isn't getting right value
