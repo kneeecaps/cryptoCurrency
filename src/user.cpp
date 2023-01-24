@@ -185,3 +185,18 @@ void User::_calculateBalance()
 {
 
 }
+
+bool User::userExists(std::string username)
+{
+    std::ifstream userFile("data/users/" + username);
+    if(userFile.good())
+    {
+        userFile.close();
+        return true;
+    }
+    else
+    {
+        userFile.close();
+        return false;
+    }
+}

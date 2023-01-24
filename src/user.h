@@ -17,6 +17,8 @@ public:
     std::string getUsername() {return _username;}
     std::string getPasswdHash() {return _passwdHash;}
     int getBalance() {return _balance;}
+
+    static bool userExists(std::string username);
 };
 
 #endif
