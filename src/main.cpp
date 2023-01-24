@@ -3,12 +3,14 @@
 
 #include "login.h"
 #include "blockChain.h"
+#include "commandLoop.h"
 
 int main()
 {
     BlockChain blockChain = BlockChain();
     User currentUser = login();
 
+    //these are test blocks, remove them later
     std::vector<Transaction> tData;
     Transaction testTransaction1 = Transaction("Jimothy", "Amy", 17);
     tData.push_back(testTransaction1);
@@ -32,7 +34,7 @@ int main()
     //blockChain.addBlock(tData2);
     //blockChain.addBlock(tData3);
 
-    blockChain.showBChain();
+    commandLoop(blockChain, currentUser);
 
     return 1;
 }
