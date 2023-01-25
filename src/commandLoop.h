@@ -24,9 +24,21 @@ void commandLoop(BlockChain& blockChain, User& user)
         std::getline(std::cin, userInput);
         userInput = upperCase(userInput);
 
-        if(userInput == "SHOWBLOCKCHAIN")
+        if(userInput == "MINE")
+        {
+            std::cout << "\nMine command will be implemented later.\n\n";
+        }
+        else if(userInput == "TRANSACTION")
+        {
+            std::cout << "\nTransaction command will be implemented later.\n\n";
+        }
+        else if(userInput == "SHOWBLOCKCHAIN")
         {
             blockChain.showBChain();
+        }
+        else if(userInput == "USERINFO")
+        {
+            std::cout << "\nUser info command will be implemented later.\n\n";
         }
         else if(userInput == "EXIT")
         {
@@ -34,7 +46,7 @@ void commandLoop(BlockChain& blockChain, User& user)
         }
         else
         {
-            std::cout << "That is not a valid command.\n";
+            std::cout << "\nThat is not a valid command.\n\n";
         }
     }
 }

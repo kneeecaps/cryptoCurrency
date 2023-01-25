@@ -4,6 +4,8 @@
 #include "user.h"
 #include "sha256.h"
 
+char badCharacters[] = {':', ',', '/', '<', '>'};
+
 User::User(bool newUser)
 {
     std::string username;
@@ -37,7 +39,24 @@ User::User(bool newUser)
                 std::ifstream userFile("data/users/" + username);
                 if(!userFile.good())
                 {
-                    newUsername = true;
+                    bool noBadChar = true;
+                    for(char character : badCharacters)
+                    {
+                        if(username.find(character) != std::string::npos)
+                        {
+                            noBadChar = false;
+                        }
+                    }
+
+                    if(noBadChar)
+                    {
+                        newUsername = true;
+                    }
+                    else
+                    {
+                        std::cout << "\n\nThat username contains a character that is not allowed.";
+                        std::cout << "\nMake sure your username does not contain any ':', ',', '/', '<' or '>'.\n\n";
+                    }
                 }
                 else
                 {
@@ -183,7 +202,7 @@ User::User(bool newUser)
 
 void User::_calculateBalance()
 {
-
+    //this function needs to take into account pending transactions that have not been mined yet too
 }
 
 bool User::userExists(std::string username)

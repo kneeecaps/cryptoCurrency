@@ -13,6 +13,7 @@ int main()
     //these are test blocks, remove them later
     std::vector<Transaction> tData;
     Transaction testTransaction1 = Transaction("Jimothy", "Amy", 17);
+    testTransaction1.queueTransaction();
     tData.push_back(testTransaction1);
     Transaction testTransaction2 = Transaction("Amy", "Jimothy", 14);
     tData.push_back(testTransaction2);

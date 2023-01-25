@@ -15,6 +15,8 @@ public:
     std::string getSender() {return _sender;}
     std::string getReceiver() {return _receiver;}
     int getAmount() {return _amount;}
+
+    void queueTransaction();
 };
 
 #endif
