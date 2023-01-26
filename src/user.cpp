@@ -50,7 +50,14 @@ User::User(bool newUser)
 
                     if(noBadChar)
                     {
-                        newUsername = true;
+                        if(username != "blockChain")
+                        {
+                            newUsername = true;
+                        }
+                        else
+                        {
+                            std::cout << "\n\nYour username cannot be \"blockChain\".\n\n";
+                        }
                     }
                     else
                     {

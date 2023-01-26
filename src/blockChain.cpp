@@ -18,6 +18,8 @@ void BlockChain::addBlock(std::vector<Transaction>& blockData)
 {
     Block newBlock = Block(_blockChain.size(), blockData, getPrevHash(), _difficulty);
     _blockChain.push_back(newBlock);
+
+    _exportBlockChain();
 }
 void BlockChain::showBChain()
 {

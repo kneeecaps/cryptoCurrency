@@ -3,6 +3,8 @@
 #include "blockChain.h"
 #include "user.h"
 
+#include "mineCommand.h"
+
 std::string upperCase(std::string input)
 {
     std::string output;
@@ -17,6 +19,7 @@ std::string upperCase(std::string input)
 void commandLoop(BlockChain& blockChain, User& user)
 {
     std::string userInput;
+    std::cout << "\n";
 
     while(true)
     {
@@ -26,7 +29,7 @@ void commandLoop(BlockChain& blockChain, User& user)
 
         if(userInput == "MINE")
         {
-            std::cout << "\nMine command will be implemented later.\n\n";
+            mineCommand(blockChain, user);
         }
         else if(userInput == "TRANSACTION")
         {
