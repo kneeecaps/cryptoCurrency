@@ -7,4 +7,5 @@ data/users/*
 !data/users/test
 data/blockChain/*
 !data/blockChain/0
-
+data/transactions/
+!data/transactions/0
