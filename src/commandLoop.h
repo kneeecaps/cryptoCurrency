@@ -38,7 +38,9 @@ void commandLoop(BlockChain& blockChain, User& user)
         }
         else if(userInput == "USERINFO")
         {
-            std::cout << "\nUser info command will be implemented later.\n\n";
+            std::cout << "\nUsername: " << user.getUsername();
+            std::cout << "\nPassword Hash: " << user.getPasswdHash();
+            std::cout << "\nBalance: " << user.getBalance() << "\n\n";
         }
         else if(userInput == "EXIT")
         {

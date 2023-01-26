@@ -198,11 +198,13 @@ User::User(bool newUser)
 
     _username = username;
     _passwdHash = passwdHash;
+    _balance = calculateBalance();
 }
 
-void User::_calculateBalance()
+int User::calculateBalance()
 {
     //this function needs to take into account pending transactions that have not been mined yet too
+    return 0;
 }
 
 bool User::userExists(std::string username)
