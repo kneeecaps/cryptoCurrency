@@ -35,7 +35,7 @@ void commandLoop(BlockChain& blockChain, User& user)
         {
             std::cout << "\nTransaction command will be implemented later.\n\n";
         }
-        else if(userInput == "SHOWBLOCKCHAIN")
+        else if(userInput == "BLOCKCHAIN")
         {
             blockChain.showBChain();
         }
