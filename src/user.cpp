@@ -1,7 +1,11 @@
 #include <iostream>
+#include <sstream>
+#include <vector>
 #include <fstream>
+#include <filesystem>
 
 #include "user.h"
+#include "block.h"
 #include "sha256.h"
 
 char badCharacters[] = {':', ',', '/', '<', '>'};
@@ -205,13 +209,77 @@ User::User(bool newUser)
 
     _username = username;
     _passwdHash = passwdHash;
-    _balance = calculateBalance();
 }
 
-int User::calculateBalance()
+void User::calculateBalance(BlockChain& blockChain)
 {
-    //this function needs to take into account pending transactions that have not been mined yet too
-    return 0;
+    int usrBal = 0;
+
+    for(Block block : blockChain.getBlockChain())
+    {
+        for(Transaction transaction : block.getData())
+        {
+            if(transaction.getSender() == _username)
+            {
+                usrBal -= transaction.getAmount();
+            }
+            if(transaction.getReceiver() == _username)
+            {
+                usrBal += transaction.getAmount();
+            }
+        }
+    }
+
+    std::vector<Transaction> pendingTransactions;
+    std::vector<std::string> pendingTransactionStr;
+
+    int fileCount = 0;
+    for(auto& file : std::filesystem::directory_iterator("data/transactions"))
+    {
+        fileCount++;
+    }
+    for(int i = 0; i < fileCount; i++)
+    {
+        std::string filePath = "data/transactions/" + std::to_string(i);
+
+        std::ifstream file(filePath);
+        std::string fileStr;
+
+        std::getline(file, fileStr);
+        pendingTransactionStr.push_back(fileStr);
+
+        file.close();
+    }
+
+    for(std::string tString : pendingTransactionStr)
+    {
+        std::vector<std::string> transactionValues;
+        std::string transactionValStr;
+        std::stringstream transactionValSS(tString);
+
+        while(std::getline(transactionValSS, transactionValStr, ':'))
+        {
+            transactionValues.push_back(transactionValStr);
+        }
+
+        std::string sender = transactionValues[0];
+        std::string receiver = transactionValues[1];
+        int amount = stoi(transactionValues[2]);
+
+        Transaction transaction = Transaction(sender, receiver, amount);
+
+        pendingTransactions.push_back(transaction);
+    }
+
+    for(Transaction transaction : pendingTransactions)
+    {
+        if(transaction.getSender() == _username)
+        {
+            usrBal -= transaction.getAmount();
+        }
+    }
+
+    _balance = usrBal;
 }
 
 bool User::userExists(std::string username)

@@ -60,4 +60,6 @@ void mineCommand(BlockChain& blockChain, User& user)
 
     Transaction rewardTransaction = Transaction("blockChain", user.getUsername(), 100);
     rewardTransaction.queueTransaction();
+
+    user.calculateBalance(blockChain);
 }

@@ -3,6 +3,8 @@
 
 #include <string>
 
+#include "blockChain.h"
+
 class User
 {
 private:
@@ -17,7 +19,7 @@ public:
     std::string getPasswdHash() {return _passwdHash;}
     int getBalance() {return _balance;}
 
-    int calculateBalance();
+    void calculateBalance(BlockChain& blockChain);
 
     static bool userExists(std::string username);
 };

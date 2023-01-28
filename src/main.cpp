@@ -9,6 +9,7 @@ int main()
 {
     BlockChain blockChain = BlockChain();
     User currentUser = login();
+    currentUser.calculateBalance(blockChain);
 
     //these are test blocks, remove them later
     std::vector<Transaction> tData;
