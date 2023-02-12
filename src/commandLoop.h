@@ -48,7 +48,10 @@ void commandLoop(BlockChain& blockChain, User& user)
         }
         else if(userInput == "SWITCHUSER")
         {
-            std::cout << "\nSwitch user command will be implemented later.\n\n";
+            std::cout << "\n";
+            user = User(false);
+            user.calculateBalance(blockChain);
+            std::cout << "\n";
         }
         else if(userInput == "EXIT")
         {

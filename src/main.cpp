@@ -8,10 +8,10 @@
 int main()
 {
     BlockChain blockChain = BlockChain();
-    User currentUser = login();
-    currentUser.calculateBalance(blockChain);
+    User user = login();
+    user.calculateBalance(blockChain);
 
-    commandLoop(blockChain, currentUser);
+    commandLoop(blockChain, user);
 
     return 1;
 }
