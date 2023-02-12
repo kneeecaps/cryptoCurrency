@@ -4,6 +4,7 @@
 #include "user.h"
 
 #include "mineCommand.h"
+#include "transactionCommand.h"
 
 std::string upperCase(std::string input)
 {
@@ -33,7 +34,7 @@ void commandLoop(BlockChain& blockChain, User& user)
         }
         else if(userInput == "TRANSACTION")
         {
-            std::cout << "\nTransaction command will be implemented later.\n\n";
+            transactionCommand(blockChain, user);
         }
         else if(userInput == "BLOCKCHAIN")
         {
@@ -44,6 +45,10 @@ void commandLoop(BlockChain& blockChain, User& user)
             std::cout << "\nUsername: " << user.getUsername();
             std::cout << "\nPassword Hash: " << user.getPasswdHash();
             std::cout << "\nBalance: " << user.getBalance() << "\n\n";
+        }
+        else if(userInput == "SWITCHUSER")
+        {
+            std::cout << "\nSwitch user command will be implemented later.\n\n";
         }
         else if(userInput == "EXIT")
         {
