@@ -5,9 +5,12 @@
 
 void transactionCommand(BlockChain& blockChain, User& user)
 {
+    user.calculateBalance(blockChain);
+
     std::string receiver;
     std::string amountStr;
     int amount;
+    std::string confirm;
 
     std::cout << "\nPlease enter the username of who you want to receive the money: ";
     getline(std::cin, receiver);
@@ -30,7 +33,24 @@ void transactionCommand(BlockChain& blockChain, User& user)
     }
 
     Transaction newTransaction = Transaction(user.getUsername(), receiver, amount);
-    newTransaction.queueTransaction();
+
+    std::cout << "\nTransaction Summary: \n";
+    std::cout << "Sender: " << newTransaction.getSender() << "\n";
+    std::cout << "Receiver: " << newTransaction.getReceiver() << "\n";
+    std::cout << "Amount: " << newTransaction.getAmount() << "\n";
+    std::cout << "\nIs this right (y/n)? ";
+    getline(std::cin, confirm);
+
+    if(toupper(confirm[0]) == 'Y')
+    {
+        newTransaction.queueTransaction();
+        std::cout << "\n\nThe transaction was recorded succesfully. The user marked as the sender has had the money deducted from their account now, but it will not be received until a block has been mined.";
+    }
+    else
+    {
+        std::cout << "\n\nThe transaction was not confirmed and therefore was not processed.";
+    }
+    std::cout << "\n\n";
 
     user.calculateBalance(blockChain);
 }
