@@ -5,7 +5,7 @@
 User login()
 {
     std::string choice;
-    User currentUser;
+    User user;
 
     std::cout << "Would you like to sign up (1) or sign in (2)?: ";
     std::getline(std::cin, choice);
@@ -13,11 +13,11 @@ User login()
 
     if(choice == "1")
     {
-        currentUser = User(true);
+        user = User(true);
     }
     else if(choice == "2")
     {
-        currentUser = User(false);
+        user = User(false);
     }
     else
     {
@@ -25,5 +25,5 @@ User login()
         login();
     }
 
-    return currentUser;
+    return user;
 }
