@@ -1,6 +1,3 @@
-#include <iostream>
-#include <vector>
-
 #include "login.h"
 #include "blockChain.h"
 #include "commandLoop.h"
