@@ -8,7 +8,7 @@
 #include "block.h"
 #include "sha256.h"
 
-char badCharacters[] = {':', ',', '/', '<', '>'};
+char badCharacters[] = {':', ',', '/', '<', '>', '*'};
 
 User::User(bool newUser)
 {
@@ -66,7 +66,7 @@ User::User(bool newUser)
                     else
                     {
                         std::cout << "\n\nThat username contains a character that is not allowed.";
-                        std::cout << "\nMake sure your username does not contain any ':', ',', '/', '<' or '>'.\n\n";
+                        std::cout << "\nMake sure your username does not contain any ':', ',', '/', '<', '> or '*'.\n\n";
                     }
                 }
                 else

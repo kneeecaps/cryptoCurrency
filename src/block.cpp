@@ -7,7 +7,7 @@
 
 Block::Block(std::string parsedData)
 {
-    _index = stoi(parsedData.substr(0, parsedData.find("<") - 2));
+    _index = stoi(parsedData.substr(0, parsedData.find("<")));
     _nonce = stoi(parsedData.substr(parsedData.find("/") + 1, parsedData.find("*") - (parsedData.find("/") + 1)));
 
     std::string dataSubstr = parsedData.substr(parsedData.find("<") + 1, parsedData.find(">") - (parsedData.find("<") + 1));

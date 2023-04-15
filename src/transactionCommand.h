@@ -44,7 +44,7 @@ void transactionCommand(BlockChain& blockChain, User& user)
     if(toupper(confirm[0]) == 'Y')
     {
         newTransaction.queueTransaction();
-        std::cout << "\n\nThe transaction was recorded succesfully. The user marked as the sender has had the money deducted from their account now, but it will not be received until a block has been mined.";
+        std::cout << "\n\nThe transaction was recorded succesfully. The money has been deducted from your account now, but it will not be received until a block has been mined.";
     }
     else
     {
