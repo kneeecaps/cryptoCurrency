@@ -43,15 +43,7 @@ Block::Block(std::string parsedData)
     }
 
     _prevHash = parsedData.substr(parsedData.find(">") + 1, parsedData.find("/") - (parsedData.find(">") + 1));
-    
-    if(_index != 0)
-    {
-        _hash = parsedData.substr(parsedData.find("*") + 1);
-    }
-    else
-    {
-        _hash = "noHash";
-    }
+    _hash = parsedData.substr(parsedData.find("*") + 1);
 
     _blockMined = true;
 }
