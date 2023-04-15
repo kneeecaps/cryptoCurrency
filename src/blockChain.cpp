@@ -4,6 +4,7 @@
 #include <filesystem>
 
 #include "blockChain.h"
+#include "sha256.h"
 
 BlockChain::BlockChain()
 {
@@ -63,7 +64,34 @@ void BlockChain::_exportBlockChain()
     {
         std::string filePath = "data/blockChain/" + std::to_string(block.getIndex());
         std::ofstream blockFile(filePath);
-        blockFile << block.parseData(true);
+        blockFile << block.parseData(2);
         blockFile.close();
     }
+}
+
+bool BlockChain::verifyBChain()
+{
+    std::string tmpPrevHash = "noHash";
+    std::string blockHash;
+
+    for(Block& block : _blockChain)
+    {
+        if(block.getIndex() == 0)
+        {
+            continue;
+        }
+
+        if(block.getPrevHash() != tmpPrevHash) {
+            std::cout << "\n\nBlock " << block.getIndex() << " has an invalid prevHash.\n\n";
+            return false;
+        }
+        tmpPrevHash = block.getHash();
+
+        blockHash = sha256(block.parseData(1));
+        if(block.getHash() != blockHash) {
+            std::cout << "\n\nBlock " << block.getIndex() << " has an invalid hash.\n\n";
+            return false;
+        }
+    }
+    return true;
 }

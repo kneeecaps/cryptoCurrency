@@ -21,6 +21,8 @@ public:
 
     void addBlock(std::vector<Transaction>& blockData);
     void showBChain();
+
+    bool verifyBChain();
 };
 
 #endif

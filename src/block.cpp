@@ -8,7 +8,7 @@
 Block::Block(std::string parsedData)
 {
     _index = stoi(parsedData.substr(0, parsedData.find("<") - 2));
-    _nonce = stoi(parsedData.substr(parsedData.find("/") + 1));
+    _nonce = stoi(parsedData.substr(parsedData.find("/") + 1, parsedData.find("*") - (parsedData.find("/") + 1)));
 
     std::string dataSubstr = parsedData.substr(parsedData.find("<") + 1, parsedData.find(">") - (parsedData.find("<") + 1));
     if(dataSubstr.length() > 0)
@@ -42,11 +42,11 @@ Block::Block(std::string parsedData)
         }
     }
 
-    _prevHash = parsedData.substr(parsedData.find(">") + 1, parsedData.find("/") - (parsedData.find(">") + 1)); //need to find out why this isn't getting right value
+    _prevHash = parsedData.substr(parsedData.find(">") + 1, parsedData.find("/") - (parsedData.find(">") + 1));
     
     if(_index != 0)
     {
-        _hash = sha256(parseData(true));
+        _hash = parsedData.substr(parsedData.find("*") + 1);
     }
     else
     {
@@ -75,7 +75,7 @@ Block::Block(int index, std::vector<Transaction>& data, std::string prevHash, in
     }
 }
 
-std::string Block::parseData(bool exportFormat)
+std::string Block::parseData(int exportFormat)
 {
     std::stringstream blockDataSS;
     std::stringstream blockContentSS;
@@ -90,17 +90,21 @@ std::string Block::parseData(bool exportFormat)
         blockContent.pop_back();
     }
 
-    if(!exportFormat)
+    if(exportFormat == 0)
     {
         return blockContent;
     }
-    else
+    else if(exportFormat > 0)
     {
         blockDataSS << _index << "<" << blockContent << ">" << _prevHash << "/" << _nonce;
-        std::string blockData = blockDataSS.str();
-
-        return blockData;
     }
+    if(exportFormat == 2)
+    {
+        blockDataSS << "*" << _hash;
+    }
+
+    std::string blockData = blockDataSS.str();
+    return blockData;
 }
 
 void Block::mineBlock(int startNonce, int increment, int difficulty)
@@ -120,7 +124,7 @@ void Block::mineBlock(int startNonce, int increment, int difficulty)
         }
         nonce += increment;
         blockContent = std::stringstream();
-        blockContent << _index << "<" << parseData(false) << ">" << _prevHash << "/" << nonce;
+        blockContent << _index << "<" << parseData(0) << ">" << _prevHash << "/" << nonce;
 
         std::string blockContentStr = blockContent.str();
 

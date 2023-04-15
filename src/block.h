@@ -24,7 +24,7 @@ public:
     std::string getHash() {return _hash;}
     std::string getPrevHash() {return _prevHash;}
 
-    std::string parseData(bool exportFormat);
+    std::string parseData(int exportFormat);
 
     void mineBlock(int startNonce, int increment, int difficulty);
 };
